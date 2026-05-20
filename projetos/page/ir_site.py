@@ -21,4 +21,6 @@ class AcessarSite(BasePages):
         expect(self.page.get_by_test_id("input-disabled")).to_be_disabled()
 
     def verificar_campo_de_leitura(self):
+        self.page.get_by_test_id("input-readonly").scroll_into_view_if_needed()
         expect(self.page.get_by_test_id("input-readonly")).to_have_attribute("readonly","")
+        
