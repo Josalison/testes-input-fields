@@ -1,15 +1,9 @@
-from playwright.sync_api import sync_playwright, expect
-from page.ir_site import AcessarSite
+from pytest_bdd import scenarios
+import projetos.Fluxo.steps.steps
 
-def test_fluxo(page):
-    acessar_site = AcessarSite(page)
+# Puxa os cenários do BDD
+scenarios('C:/Users/josam/OneDrive/Área de Trabalho/testes/projetos/Fluxo/features')
 
-
-    acessar_site.acessar_site()
-    acessar_site.Digitar_nome_do_filme()
-    acessar_site.vericar_texto()
-    acessar_site.apagar_texto_do_campo()
-    acessar_site.verificar_campo_desabilitado()
-    acessar_site.verificar_campo_de_leitura()
-    
-    page.wait_for_timeout(3000)
+# O gancho do teste fica 100% vazio, sem receber (page) e sem comandos dentro!
+def test_fluxo():
+    pass

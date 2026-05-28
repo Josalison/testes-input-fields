@@ -1,5 +1,5 @@
 from playwright.sync_api import sync_playwright, expect
-from page.pages import BasePages
+from projetos.Fluxo.page.pages import BasePages
 class AcessarSite(BasePages):
     def acessar_site(self):
         self.page.goto("https://www.qaplayground.com/practice/input-fields")
@@ -11,7 +11,7 @@ class AcessarSite(BasePages):
         self.page.get_by_test_id("input-append-text").fill("Meu precioso !!!")
         self.page.keyboard.press("Tab")
         
-    def vericar_texto(self):
+    def verificar_texto(self):
         expect(self.page.get_by_test_id("input-verify-text")).to_have_value("QA PlayGround")
 
     def apagar_texto_do_campo(self):
